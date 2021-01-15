@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import  React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {TouchableOpacity} from "react-native-web";
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+//import {TouchableOpacity} from "react-native-web";
 
 let labels=[
     ["1","2","3"],
@@ -69,16 +69,16 @@ export default function App() {
     return (
     <View style={styles.root}>
       <View style = {styles.display}>
-          <Text style={{fontSize: "2.5em"}}>
+          <Text style={{fontSize: 40}}>
               {display}
           </Text>
       </View>
-      <View style={styles.keyboard}>
+        <View style={styles.keyboard}>
         {labels.map((value, index, array)=>{
           return <View style={styles.row}>
               {value.map((item)=>{
                   return <TouchableOpacity style={styles.cell} onPress={()=>{functionMapping[item]()}}>
-                        <Text style={{fontSize: "1.5em"}}>{item}</Text>
+                      <Text style={{fontSize: 35}}>{item}</Text>
                   </TouchableOpacity>
               })}
           </View>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize:"2em"
+      fontSize:40
   },
   display:{
       flex: 2,
